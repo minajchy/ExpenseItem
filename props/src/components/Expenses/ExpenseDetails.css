@@ -1,0 +1,9 @@
+.expense-details__details {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(16, 14, 14);
+  background-color: #8b37b1;
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 12px;
+}
