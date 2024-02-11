@@ -4,7 +4,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./Expenses.css";
 
-const Expenses = (props) => {
+/*const Expenses = (props) => {
   return (
     <Card className="expenses">
       <ExpenseItem
@@ -13,7 +13,7 @@ const Expenses = (props) => {
         date={props.items[0].date}
         locationOfExpenditure={props.items[0].locationOfExpenditure}
       />
-      <ExpenseItem
+      <ExpenseItem 
         title={props.items[1].title}
         amount={props.items[1].amount}
         date={props.items[1].date}
@@ -39,14 +39,14 @@ const Expenses = (props) => {
       />
     </Card>
   );
-};
+};*/
 
-/*function Expenses(props) {
-    const { expenses } = props;
+function Expenses(props) {
+   // const { expenses } = props;
 
     return (
         <Card className="expenses">
-            {expenses.map((expense) => (
+            {props.items.map((expense) => (
                 <ExpenseItem
                     key={expense.id}
                     title={expense.title}
@@ -57,7 +57,7 @@ const Expenses = (props) => {
             ))}
         </Card>
     );
-}*/
+}
 
 /*function Expenses(props) {
     const { expenses } = props;
