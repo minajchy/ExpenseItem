@@ -6,13 +6,22 @@ import ExpensesFilter from "./ExpensesFilter";
 import "./Expenses.css";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilteredYear] = useState('2020')
+  const [filteredYear, setFilteredYear] = useState("2020");
 
-  const filterChangeHandler = selectedYear => {
+  const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
-  }
+  };
 
- /* return (
+  const filteredExpenses = props.items.filter((expense) => {
+    if(filteredYear === 'all') {
+      return true;
+    }
+    else {
+      return expense.date.getFullYear().toString() === filteredYear;
+    }  
+  });
+
+  /*return (
     <Card className="expenses">
       <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
       <ExpenseItem
@@ -49,24 +58,28 @@ const Expenses = (props) => {
   );
 };*/
 
-/*function Expenses(props) {
+  /*function Expenses(props) {
    // const { expenses } = props;*/
 
-    return (
-        <Card className="expenses">
-          <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler} />
-            {props.items.map((expense) => (
-                <ExpenseItem
-                    key={expense.id}
-                    title={expense.title}
-                    date={expense.date}
-                    amount={expense.amount}
-                    locationOfExpenditure={expense.locationOfExpenditure}
-                />
-            ))}
-        </Card>
-    );
-}
+  return (
+    <Card className="expenses">
+      <ExpensesFilter
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler}
+      />
+      
+        {filteredExpenses.map((expense) => 
+        <ExpenseItem
+          key={expense.id}
+          title={expense.title}
+          date={expense.date}
+          amount={expense.amount}
+          locationOfExpenditure={expense.locationOfExpenditure}
+        />
+      )}
+    </Card>
+  );
+};
 
 /*function Expenses(props) {
     const { expenses } = props;
@@ -90,6 +103,8 @@ const Expenses = (props) => {
             {expenseItems}
         </Card>
     );
-}*/
+}
+
+{props.items.map((expense) => (*/
 
 export default Expenses;
