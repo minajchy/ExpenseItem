@@ -1,4 +1,4 @@
-import React from "react";   
+import React from "react";
 
 import ExpenseDate from "./ExpenseDate";
 import ExpenseDetails from "./ExpenseDetails";
@@ -20,16 +20,18 @@ function ExpenseItem(props) {
   }*/
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date}></ExpenseDate>
-      <div className="expense-item__description">
-        <h2 className="expense-item h2">{props.title}</h2>
-        <ExpenseDetails amount={props.amount}></ExpenseDetails>
-        <div className="expense-item__location">
-          {props.locationOfExpenditure}
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date}></ExpenseDate>
+        <div className="expense-item__description">
+          <h2 className="expense-item h2">{props.title}</h2>
+          <ExpenseDetails amount={props.amount}></ExpenseDetails>
+          <div className="expense-item__location">
+            {props.locationOfExpenditure}
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </li>
   );
 }
 

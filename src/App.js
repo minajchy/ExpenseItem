@@ -49,8 +49,8 @@ const App = () => {
     //console.log(expense);
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
-    })
-  }
+    });
+  };
 
   /*return React.createElement(
     "div",
