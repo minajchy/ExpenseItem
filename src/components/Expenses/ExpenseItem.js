@@ -6,18 +6,6 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 function ExpenseItem(props) {
-  /*const [title, setTitle] = useState(props.title);
-  const [amount, setAmount] = useState(props.amount);
-
-  const clickHandler = () => {
-    setTitle('updated');
-    console.log(title);
-  };
-
-  const handleClick = () => {
-    setAmount('100')
-    console.log(amount);
-  }*/
 
   return (
     <li>
@@ -34,8 +22,5 @@ function ExpenseItem(props) {
     </li>
   );
 }
-
-//<button onClick={clickHandler}>Delete Expense</button>
-//<button onClick={handleClick}>Update</button>
 
 export default ExpenseItem;

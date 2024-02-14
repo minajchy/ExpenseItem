@@ -45,8 +45,6 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    //console.log('In App.js');
-    //console.log(expense);
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
@@ -65,21 +63,6 @@ const App = () => {
       <Expenses items={expenses} />
     </div>
   );
-
-  /*return (
-    <div>
-      <div><h2>Expense Item!</h2></div>
-      {expenses.map((expence) => (
-        <ExpenseItem
-          key={expence.id}
-          title={expence.title}
-          date={expence.date}
-          amount={expence.amount}
-          locationOfExpenditure={expence.locationOfExpenditure}
-        ></ExpenseItem>
-      ))}
-    </div>
-  );*/
 };
 
 export default App;
